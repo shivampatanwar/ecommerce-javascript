@@ -94,6 +94,10 @@
 @media screen and (max-width: 560px) {
     .formdiv {
 
+        #form{
+            width: 90%;
+        }
+
         .form {
             width: 90%;
             margin: 80px auto 50px;
