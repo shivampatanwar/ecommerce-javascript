@@ -146,14 +146,7 @@
                 width: 100%;
 
                 .btn {
-                    margin-top: 20px;
-                    padding: 8px 0px;
-                    width: 40%;
-                    align-items: flex-start;
-                    background-color: rgb(2, 71, 2);
-                    color: white;
-                    border: none;
-                    border-radius: 5px;
+                    padding: 10px 0px;
                 }
 
             }
