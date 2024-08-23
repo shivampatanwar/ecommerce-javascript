@@ -1,3 +1,5 @@
+@import url('headerfooter.css');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,40 +11,3 @@ body {
     /* line-height: 1.6; */
 }
 
-.container {
-    width: 100%;
-    height: 55px;
-    padding: 20px;
-    background-color: #292525;
-    color: #fff;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-
-        a {
-            color: #fff;
-            text-decoration: none;
-        }
-    }
-
-    nav ul {
-        list-style-type: none;
-        display: flex;
-
-        li {
-            margin-left: 20px;
-        }
-
-        li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-    }
-}
