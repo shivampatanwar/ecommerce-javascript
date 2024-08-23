@@ -45,10 +45,12 @@
 
 
         div {
+
             width: 100%;
 
+
             .btn {
-                margin-top: 20px;
+                margin: 20px 0px 20px;
                 padding: 8px 0px;
                 width: 40%;
                 align-items: flex-start;
@@ -56,6 +58,24 @@
                 color: white;
                 border: none;
                 border-radius: 5px;
+            }
+
+            
+
+        }
+
+        .links{
+            margin-top: 8px;
+
+            .a{
+                color: black;
+                font-weight: bolder;
+                text-decoration: none;
+
+                &:hover{
+                    color: red;
+                    text-decoration: underline;
+                }
             }
 
         }
