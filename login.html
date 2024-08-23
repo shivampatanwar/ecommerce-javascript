@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="general/css/index.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="merchant/css/merchant-signup.css">
 </head>
-<body> 
+
+<body>
     <header>
         <div class="container">
             <div class="logo"><a href="index">E-Commerce Store</a></div>
             <nav id="nav">
                 <ul>
                     <li><a href="index">Home</a></li>
-                    <li><a href="customer-signup">SignUp</a></li>
+                    <li><a  href="customer-signup">SignUp</a></li>
                     <li><a class="active" href="login">Login</a></li>
                 </ul>
             </nav>
@@ -26,7 +28,47 @@
     </header>
 
     <main>
-        <h1>Login</h1>
+
+        <div class="formdiv"   >
+
+            <form action="" method="POST" class="form" id="form">
+
+                <h2>Login</h2>
+
+                <div class="forms">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+
+                <div class="forms">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="btns">
+                    <button type="submit" class="btn">Login</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+
+                <div class="links">
+                    <span>Create account as</span>
+                    <a class="a" href="customer-signup">Customer</a>
+                </div>
+
+                <div class="links">
+                    <span>Create account as</span>
+                    <a class="a" href="merchant-signup">Merchant</a>
+                </div>
+
+                <div class="links">
+                    <span>Create account as</span>
+                    <a class="a" href="admin-signup">Admin</a>
+                </div>
+
+
+            </form>
+        </div>
+
     </main>
 
     <footer>
@@ -55,7 +97,7 @@
             </div>
         </div>
     </footer>
-
     <script src="general/js/hamberger.js"></script>
 </body>
+
 </html>
