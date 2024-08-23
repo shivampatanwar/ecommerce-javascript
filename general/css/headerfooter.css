@@ -76,6 +76,7 @@ body {
 @media screen and (max-width: 560px) {
 
     .container {
+        padding: 30px 30px;
 
         .logo {
             font-size: 1.3rem;
