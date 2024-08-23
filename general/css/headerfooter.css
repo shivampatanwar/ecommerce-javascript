@@ -38,15 +38,16 @@
 
     .hamberger {
         display: none;
-        cursor: pointer;
-        color: #fff;
-        font-size: 2rem;
 
         .line {
             width: 20px;
             height: 3px;
             background-color: #fff;
             margin: 5px 0;
+        }
+
+        ::selection{
+            background: transparent;
         }
     }
 }
@@ -75,21 +76,14 @@
             right: 0;
             background-color: #292525;
             width: 150px;
-            padding: 30px 20px;
+            padding: 30px 30px;
 
-            li {
-                margin-left: 20px;
-            }
-
-            li a {
-                color: #fff;
-                text-decoration: none;
-                transition: color 0.3s ease;
-            }
+          
         }
 
         .hamberger {
             display: block;
+            color: #fff;
         }
 
     }
