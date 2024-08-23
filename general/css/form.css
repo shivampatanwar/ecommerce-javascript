@@ -1,0 +1,134 @@
+.formdiv {
+    width: 100%;
+
+    .form {
+        width: 500px;
+        margin: 130px auto 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+
+        .forms {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin: 10px;
+
+            label {
+                margin-bottom: 5px;
+            }
+
+            input {
+                width: 100%;
+                padding: 5px;
+            }
+
+            textarea {
+                width: 100%;
+                padding: 5px;
+                height: 100px;
+            }
+
+
+        }
+
+
+
+        div {
+            width: 100%;
+
+            .btn {
+                margin-top: 20px;
+                padding: 8px 0px;
+                width: 40%;
+                align-items: flex-start;
+                background-color: rgb(2, 71, 2);
+                color: white;
+                border: none;
+                border-radius: 5px;
+            }
+
+        }
+    }
+}
+
+
+
+
+/* Form Responsive  */
+@media screen and (max-width: 560px) {
+    .formdiv {
+
+        .form {
+            width: 90%;
+            margin: 80px auto 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 30px 20px 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+
+            .forms {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-start;
+                flex-direction: column;
+                margin: 10px;
+
+                label {
+                    margin-bottom: 5px;
+                }
+
+                input {
+                    width: 100%;
+                    padding: 8px;
+
+                }
+
+                textarea {
+                    width: 100%;
+                    padding: 5px;
+                    height: 100px;
+                }
+
+
+            }
+
+
+
+            div {
+                width: 100%;
+
+                .btn {
+                    margin-top: 20px;
+                    padding: 8px 0px;
+                    width: 40%;
+                    align-items: flex-start;
+                    background-color: rgb(2, 71, 2);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                }
+
+            }
+        }
+    }
+
+}

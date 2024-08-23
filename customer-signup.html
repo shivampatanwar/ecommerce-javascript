@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Signup</title>
-    <link rel="stylesheet" href="general/css/index.css">
+    <link rel="stylesheet" href="customer/css/customer-signup.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -14,7 +15,7 @@
             <nav id="nav">
                 <ul>
                     <li><a href="index">Home</a></li>
-                    <li><a href="customer-signup">SignUp</a></li>
+                    <li><a class="active" href="customer-signup">SignUp</a></li>
                     <li><a href="login">Login</a></li>
                 </ul>
             </nav>
@@ -27,7 +28,52 @@
     </header>
 
     <main>
-        <h1>customer-signup</h1>
+
+        <div class="formdiv">
+
+            <form action="" method="POST" class="form">
+
+                <h2>Customer Signup</h2>
+
+                <div class="forms">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+
+                <div class="forms">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" >
+                </div>
+
+                <div class="forms">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+
+                <div class="forms">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password"  >
+                </div>
+                
+                <div class="forms">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" id="confirmpassword" name="confirmpassword">
+                </div>
+               
+                <div class="forms">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" rows="3"></textarea>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn">Sign Up</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+
+                
+            </form>
+        </div>
+
     </main>
 
     <footer>
@@ -58,4 +104,5 @@
     </footer>
     <script src="general/js/hamberger.js"></script>
 </body>
+
 </html>
