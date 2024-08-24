@@ -28,7 +28,7 @@ const userModel = mongoose.model("user", schemaData);
 
 // Create or Save Data in MongoDB
 // ​http://localhost:8080/create
-app.post("/create", async(req, res) => {
+app.post("/api/user", async(req, res) => {
     console.log(req.body);
     const data = new userModel(req.body);
     await data.save();
@@ -39,7 +39,7 @@ app.post("/create", async(req, res) => {
 
 // Update Data in MongoDB
 // ​http://localhost:8080/update
-app.put("/update", async(req, res) => {
+app.put("/api/user", async(req, res) => {
     console.log(req.body);
     const {id, ...rest}= req.body;
     const data = await userModel.updateOne({_id : id}, rest);
@@ -50,7 +50,7 @@ app.put("/update", async(req, res) => {
 
 // Read Data From Database -> MongoDB
 // ​http://localhost:8080
-app.get("/", async(req, res) => {
+app.get("/api/user", async(req, res) => {
     const data = await userModel.find({});
     res.json({ success: true, data : data });
 
@@ -60,7 +60,7 @@ app.get("/", async(req, res) => {
 
 // Delete Data From Database -> MongoDB
 // ​http://localhost:8080/delete/<id>
-app.delete("/delete/:id", async(req, res) => {
+app.delete("/api/delete/:id", async(req, res) => {
     const id = req.params.id;
     console.log(id);
     const data = await userModel.deleteOne({_id : id});
