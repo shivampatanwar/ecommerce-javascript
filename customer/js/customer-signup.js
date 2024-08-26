@@ -1,6 +1,61 @@
 
 // Customer Signup 
 
+// get signup button reference and add event listener to it
+let signupbtn = document.getElementById('signupbtn');
+
+signupbtn.addEventListener('click', (e) => {
+
+    // prevent form submission
+    e.preventDefault();
+
+    // generate customer id
+    let customerid = JSON.parse(localStorage.getItem('customerid')) || 1;
+
+
+
+    // create customer object
+    let customer = {
+        id: customerid,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        password: document.getElementById('password').value,
+        address: document.getElementById('address').value,
+        cart: [],
+        order: []
+
+    }
+
+
+    //get customer array of object from local storage
+    let customers = JSON.parse(localStorage.getItem('customer')) || [];
+    let merchants = JSON.parse(localStorage.getItem('merchant')) || [];
+
+
+    //check if email already exists
+    if (customers.find(c => c.email === customer.email) || merchants.find(m => m.email === customer.email)) {
+        alert('Email already exists');
+        return;
+    }
+    //if not, add customer to array and local storage
+    else {
+
+        //add latest/newest customerid to local storage
+        localStorage.setItem('customerid', JSON.stringify(customerid + 1));
+
+        //add customer to local storage
+        customers.push(customer);
+        localStorage.setItem('customer', JSON.stringify(customers));
+
+        //redirect to login page
+        location.href = "/login.html";
+
+    }
+
+
+});
+
 
 
 

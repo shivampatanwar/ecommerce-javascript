@@ -15,8 +15,7 @@ fetch('http://localhost:8080/api/user', {
         'content-type': 'application/json'
     },
     body: JSON.stringify(user)
-}).then((response)=>response.json())
-   .then((data)=>console.log(data))
+})
 
 // var xhr = new XMLHttpRequest();
 // xhr.open('POST', '/api/user/', true);
