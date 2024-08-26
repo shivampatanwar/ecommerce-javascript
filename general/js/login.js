@@ -55,7 +55,6 @@ window.addEventListener("DOMContentLoaded", function () {
                 localStorage.setItem('loginas', 'merchant');
                 localStorage.setItem('loginid', merchant.id);
 
-
                 //redirect to merchant dashboard
                 location.href = "index";
             } else if (merchant.email !== email) {
@@ -73,7 +72,6 @@ window.addEventListener("DOMContentLoaded", function () {
                 //session
                 localStorage.setItem('loginas', 'admin');
                 localStorage.setItem('loginid', admin.id);
-
 
                 //redirect to admin dashboard
                 location.href = "index";
