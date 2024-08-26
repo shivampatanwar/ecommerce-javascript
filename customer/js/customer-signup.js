@@ -49,7 +49,7 @@ signupbtn.addEventListener('click', (e) => {
         localStorage.setItem('customer', JSON.stringify(customers));
 
         //redirect to login page
-        location.href = "login.html";
+        location.href = "login";
 
     }
 
