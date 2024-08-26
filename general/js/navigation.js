@@ -45,7 +45,8 @@ logout.style.display = 'none';
 
 logout.addEventListener('click', (e) => {
     e.preventDefault();
-    localStorage.clear();
+    localStorage.removeItem('loginas');
+    localStorage.removeItem('loginid');
     location.href = "index";
 });
 
