@@ -21,20 +21,20 @@
                     <li id="customerprofile"><a href="customer-profile">Profile</a></li>
 
 
-                    <li id="product"><a  href="merchant-product">Product</a></li>
-                    <li id="currentorder"><a  href="merchant-currentorder">CurrentOrder</a></li>
+                    <li id="product"><a href="merchant-product">Product</a></li>
+                    <li id="currentorder"><a href="merchant-currentorder">CurrentOrder</a></li>
                     <li id="previousorder"><a href="merchant-previousorder">PreviousOrder</a></li>
                     <li id="merchantprofile"><a href="merchant-profile">Profile</a></li>
 
 
-                    <li id="admincustomer"><a  href="admin-customer">Customer</a></li>
-                    <li id="adminmerchant"><a  href="admin-merchant">Merchant</a></li>
+                    <li id="admincustomer"><a href="admin-customer">Customer</a></li>
+                    <li id="adminmerchant"><a href="admin-merchant">Merchant</a></li>
                     <li id="adminprofile"><a class="active" href="admin-profile">Profile</a></li>
 
 
 
                     <li id="signup"><a href="customer-signup">SignUp</a></li>
-                    <li id="login"><a  href="login">Login</a></li>
+                    <li id="login"><a href="login">Login</a></li>
                     <li id="logout"><a href="index">Logout</a></li>
                 </ul>
             </nav>
@@ -48,17 +48,31 @@
 
     <main>
         <style>
-            .cardview{
-                display: flex;
-                flex-wrap: wrap;
-                padding: 50px;
+            .profileview {
+                margin: 100px 10px;
+
             }
 
+            p{
+                margin: 10px 0;
+            }
+
+            @media screen and (max-width: 527px) {
+                .profileview {
+                    margin: 100px 20px;
+                    padding: 20px 20px;
+                    background-color: white;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+                }
+
+            }
         </style>
-       <div class="profileview" id="profileview">
+        <div class="profileview" id="profileview">
 
 
-       </div>
+        </div>
 
 
     </main>
