@@ -21,79 +21,70 @@ loginbtn.addEventListener('click', (e) => {
     let admins = JSON.parse(localStorage.getItem('admin'));
 
 
-    function errorMsg(message){
+    function errorMsg(message) {
         document.getElementById('errormsg').innerHTML = message;
     }
 
 
-    let loginas = localStorage.getItem('loginas');
+    if (customers.find(c => c.email === email)) {
+        //check if the customer email and password are correct
+        let customer = customers.find(c => c.email === email);
+        if (customer.email === email && customer.password === password) {
+
+            //session
+            localStorage.setItem('loginas', 'customer');
+            localStorage.setItem('loginid', customer.id);
+
+            //redirect to customer dashboard
+            location.href = "index";
+        } else if (customer.email !== email) {
+            errorMsg('Incorrect Email');
+        }
+        else {
+            errorMsg('Incorrect Password');
+        }
+
+    }
+    else if (merchants.find(m => m.email === email)) {
+        let merchant = merchants.find(m => m.email === email);
+        //check if the merchant email and password are correct
+        if (merchant.email === email && merchant.password === password) {
+
+            //session
+            localStorage.setItem('loginas', 'merchant');
+            localStorage.setItem('loginid', merchant.id);
 
 
+            //redirect to merchant dashboard
+            location.href = "index";
+        } else if (merchant.email !== email) {
+            errorMsg('Incorrect Email');
+        }
+        else {
+            errorMsg('Incorrect Password');
+        }
+    }
+    else if (admins.find(a => a.email === email)) {
+        let admin = admins.find(a => a.email === email);
+        //check if the admin email and password are correct
+        if (admin.email === email && admin.password === password) {
 
-    // if no customer, merchant or admin array found in local storage, show error message
-    if (!customers && !merchants && !admins) {
+            //session
+            localStorage.setItem('loginas', 'admin');
+            localStorage.setItem('loginid', admin.id);
+
+
+            //redirect to admin dashboard
+            location.href = "index";
+        }
+        else if (admin.email !== email) {
+            errorMsg('Incorrect Email');
+        }
+        else {
+            errorMsg('Incorrect Password');
+        }
+    }else{
         errorMsg("Acoount doesn't exists create one");
-
-    } else {
-
-        if (customers && loginas === 'customer') {
-            //check if the customer email and password are correct
-            let customer = customers.find(c => c.email === email);
-            if (customer.email === email && customer.password === password) {
-
-                //session
-                localStorage.setItem('loginas', 'customer');
-                localStorage.setItem('loginid', customer.id);
-
-                //redirect to customer dashboard
-                location.href = "index";
-            } else if (customer.email !== email) {
-                errorMsg('Incorrect Email');
-            }
-            else {
-                errorMsg('Incorrect Password');
-            }
-
-        }
-        else if (merchants && loginas === 'merchant') {
-            let merchant = merchants.find(m => m.email === email);
-            //check if the merchant email and password are correct
-            if (merchant.email === email && merchant.password === password) {
-
-                //session
-                localStorage.setItem('loginas', 'merchant');
-                localStorage.setItem('loginid', merchant.id);
-
-
-                //redirect to merchant dashboard
-                location.href = "index";
-            } else if (merchant.email !== email) {
-                errorMsg('Incorrect Email');
-            }
-            else {
-                errorMsg('Incorrect Password');
-            }
-        }
-        else if (admins && loginas === 'admin') {
-            let admin = admins.find(a => a.email === email);
-            //check if the admin email and password are correct
-            if (admin.email === email && admin.password === password) {
-
-                //session
-                localStorage.setItem('loginas', 'admin');
-                localStorage.setItem('loginid', admin.id);
-
-                
-                //redirect to admin dashboard
-                location.href = "index";
-            }
-            else if (admin.email !== email) {
-                errorMsg('Incorrect Email');
-            }
-            else {
-                errorMsg('Incorrect Password');
-            }
-        }
     }
 
 });
