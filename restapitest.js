@@ -1,21 +1,21 @@
 
 
-let user = {
-    name: "shivam",
-    email: "swsxbsb@gmail.com",
-    mobile: "9685430664",
-    city: "bsp",
-    state: "cg"
-};
+// let user = {
+//     name: "shivam",
+//     email: "swsxbsb@gmail.com",
+//     mobile: "9685430664",
+//     city: "bsp",
+//     state: "cg"
+// };
 
 
-fetch('http://localhost:8080/api/user', {
-    method : "POST",
-    headers:{
-        'content-type': 'application/json'
-    },
-    body: JSON.stringify(user)
-})
+// fetch('http://localhost:8080/api/user', {
+//     method : "POST",
+//     headers:{
+//         'content-type': 'application/json'
+//     },
+//     body: JSON.stringify(user)
+// })
 
 // var xhr = new XMLHttpRequest();
 // xhr.open('POST', '/api/user/', true);
