@@ -27,9 +27,9 @@ window.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        if (customers.find(c => c.email === email)) {
+        if (customers.find(c => c.email == email)) {
             //check if the customer email and password are correct
-            let customer = customers.find(c => c.email === email);
+            let customer = customers.find(c => c.email == email);
             if (customer.email === email && customer.password === password) {
 
                 //session
@@ -46,8 +46,8 @@ window.addEventListener("DOMContentLoaded", function () {
             }
 
         }
-        else if (merchants.find(m => m.email === email)) {
-            let merchant = merchants.find(m => m.email === email);
+        else if (merchants.find(m => m.email == email)) {
+            let merchant = merchants.find(m => m.email == email);
             //check if the merchant email and password are correct
             if (merchant.email === email && merchant.password === password) {
 
@@ -65,8 +65,8 @@ window.addEventListener("DOMContentLoaded", function () {
                 errorMsg('Incorrect Password');
             }
         }
-        else if (admins.find(a => a.email === email)) {
-            let admin = admins.find(a => a.email === email);
+        else if (admins.find(a => a.email == email)) {
+            let admin = admins.find(a => a.email == email);
             //check if the admin email and password are correct
             if (admin.email === email && admin.password === password) {
 
