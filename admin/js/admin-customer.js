@@ -16,7 +16,6 @@ if (!customers) {
                 <p>Email: ${customer.email}</p>
                 <p>Phone: ${customer.phone}</p>
                 <p>Address: ${customer.address}</p>
-                <button onclick="showCustomerDetails(${customer.id})">View Details</button>
             </div>
         `;
     

@@ -15,7 +15,6 @@ if (!merchants) {
                 <p>Phone: ${merchant.phone}</p>
                 <p>GST: ${merchant.gst}</p>
                 <p>Address: ${merchant.address}</p>
-                <button onclick="showMerchantDetails(${merchant.id})">View Details</button>
             </div>
         `;
     });
