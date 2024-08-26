@@ -17,9 +17,9 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
         //get customer array of object from local storage
-        let customers = JSON.parse(localStorage.getItem('customer'));
-        let merchants = JSON.parse(localStorage.getItem('merchant'));
-        let admins = JSON.parse(localStorage.getItem('admin'));
+        let customers = JSON.parse(localStorage.getItem('customer')) || [];
+        let merchants = JSON.parse(localStorage.getItem('merchant')) || [];
+        let admins = JSON.parse(localStorage.getItem('admin')) || [];
 
 
         function errorMsg(message) {
