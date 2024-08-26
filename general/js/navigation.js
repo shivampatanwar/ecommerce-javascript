@@ -22,6 +22,7 @@ let login = document.getElementById('login');
 let logout = document.getElementById('logout');
 
 
+
 // Customer
 cart.style.display = 'none';
 order.style.display = 'none';

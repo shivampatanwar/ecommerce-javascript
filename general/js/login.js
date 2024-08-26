@@ -26,6 +26,8 @@ loginbtn.addEventListener('click', (e) => {
     }
 
 
+    let loginas = localStorage.getItem('loginas');
+
 
 
     // if no customer, merchant or admin array found in local storage, show error message
@@ -34,7 +36,7 @@ loginbtn.addEventListener('click', (e) => {
 
     } else {
 
-        if (customers) {
+        if (customers && loginas === 'customer') {
             //check if the customer email and password are correct
             let customer = customers.find(c => c.email === email);
             if (customer.email === email && customer.password === password) {
@@ -53,7 +55,7 @@ loginbtn.addEventListener('click', (e) => {
             }
 
         }
-        else if (merchants) {
+        else if (merchants && loginas === 'merchant') {
             let merchant = merchants.find(m => m.email === email);
             //check if the merchant email and password are correct
             if (merchant.email === email && merchant.password === password) {
@@ -72,7 +74,7 @@ loginbtn.addEventListener('click', (e) => {
                 errorMsg('Incorrect Password');
             }
         }
-        else if (admins) {
+        else if (admins && loginas === 'admin') {
             let admin = admins.find(a => a.email === email);
             //check if the admin email and password are correct
             if (admin.email === email && admin.password === password) {
