@@ -21,28 +21,30 @@ loginbtn.addEventListener('click', (e) => {
     let admins = JSON.parse(localStorage.getItem('admin'));
 
 
+    function errorMsg(message){
+        document.getElementById('errormsg').innerHTML = message;
+    }
+
+
 
 
     // if no customer, merchant or admin array found in local storage, show error message
     if (!customers && !merchants && !admins) {
-        alert("Acoount doesn't exists");
-        location.href = 'customer-signup';
+        errorMsg("Acoount doesn't exists");
+
     } else {
 
         if (customers) {
             //check if the customer email and password are correct
             let customer = customers.find(c => c.email === email);
             if (customer.email === email && customer.password === password) {
-
-                //
-
                 //redirect to customer dashboard
                 location.href = "customer-home";
-            }else if ( customer.email !== email) {
-                alert('Incorrect Email');
+            } else if (customer.email !== email) {
+                errorMsg('Incorrect Email');
             }
             else {
-                alert('Incorrect Password');
+                errorMsg('Incorrect Password');
             }
 
         }
@@ -52,11 +54,11 @@ loginbtn.addEventListener('click', (e) => {
             if (merchant.email === email && merchant.password === password) {
                 //redirect to merchant dashboard
                 location.href = "merchant-home";
-            }else if ( merchant.email !== email) {
-                alert('Incorrect Email');
+            } else if (merchant.email !== email) {
+                errorMsg('Incorrect Email');
             }
             else {
-                alert('Incorrect Password');
+                errorMsg('Incorrect Password');
             }
         }
         else if (admins) {
@@ -66,15 +68,12 @@ loginbtn.addEventListener('click', (e) => {
                 //redirect to admin dashboard
                 location.href = "admin-home";
             }
-            else if ( admin.email !== email) {
-                alert('Incorrect Email');
+            else if (admin.email !== email) {
+                errorMsg('Incorrect Email');
             }
             else {
-                alert('Incorrect Password');
+                errorMsg('Incorrect Password');
             }
-        }
-        else {
-            alert('Invalid email or password');
         }
     }
 
