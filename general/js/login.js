@@ -44,6 +44,7 @@ loginbtn.addEventListener('click', (e) => {
     //if not, show error message
     else {
         alert('Invalid email or password');
+        return;
     }
 
 });
