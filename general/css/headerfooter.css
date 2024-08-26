@@ -15,7 +15,10 @@ body {
     /* font-family: Arial, sans-serif; */
     /* font-family: sans-serif; */
     font-family: system-ui;
-    margin-top: 60px;
+}
+
+main {
+    padding: 150px;
 }
 
 

@@ -12,7 +12,7 @@ if (!customers) {
 
         cardview.innerHTML += `
             <div class="carddiv">
-                <h3>${customer.name}</h3>
+                <h2>${customer.name}</h2>
                 <p>Email: ${customer.email}</p>
                 <p>Phone: ${customer.phone}</p>
                 <p>Address: ${customer.address}</p>

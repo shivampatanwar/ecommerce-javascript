@@ -47,27 +47,41 @@
     </header>
 
     <main>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 align="center">Merchant</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <style>
+            .cardview{
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+            }
+
+            .carddiv{
+                padding: 40px;
+                min-width: 25%;
+                background-color: #f2f2f2;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0,0,0,0.2);
+                
+                p{
+                    margin: 10px 0;
+                }
+
+                button{
+                    padding: 10px 20px;
+                    background-color: rgb(90, 145, 8);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-top: 20px;
+                }
+            }
+
+        </style>
+       <div class="cardview" id="cardview">
+
+
+       </div>
+
 
     </main>
 
@@ -99,6 +113,7 @@
     </footer>
     <script src="general/js/hamberger.js"></script>
     <script src="general/js/navigation.js"></script>
+    <script src="admin/js/admin-merchant.js"></script>
 </body>
 
 </html>
