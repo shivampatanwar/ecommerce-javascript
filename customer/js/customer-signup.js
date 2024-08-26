@@ -48,6 +48,8 @@ signupbtn.addEventListener('click', (e) => {
         customers.push(customer);
         localStorage.setItem('customer', JSON.stringify(customers));
 
+        document.getElementById('errormsg').innerHTML = 'Signup Successful';
+
         //redirect to login page
         location.href = "login";
 
