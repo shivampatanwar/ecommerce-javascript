@@ -28,18 +28,18 @@ loginbtn.addEventListener('click', (e) => {
     //check if the customer email and password are correct
     if (customer.email === email && customer.password === password) {
         //redirect to customer dashboard
-        location.href = "/customer-home.html";
+        location.href = "customer-home.html";
 
     }
     //check if the merchant email and password are correct
     else if (merchant.email === email && merchant.password === password) {
         //redirect to merchant dashboard
-        location.href = "/merchant-home.html";
+        location.href = "merchant-home.html";
     }
     //check if the admin email and password are correct
     else if (admin.email === email && admin.password === password) {
         //redirect to admin dashboard
-        location.href = "/admin-home.html";
+        location.href = "admin-home.html";
     }
     //if not, show error message
     else {
