@@ -43,16 +43,24 @@ merchantprofile.style.display = 'none';
 //login and signup
 logout.style.display = 'none';
 
+logout.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.clear();
+    location.href = "index";
+});
 
 
 
-let loginas = JSON.parse(localStorage.getItem('loginas'));
+
+let loginas = localStorage.getItem('loginas');
 
 if(loginas==='customer'){
     cart.style.display = 'block';
     order.style.display = 'block';
     customerprofile.style.display = 'block';
     logout.style.display = 'block';
+    signup.style.display = 'none';
+    login.style.display = 'none';
 
 }else if(loginas==='merchant'){
     merchantproduct.style.display = 'block';
@@ -60,12 +68,16 @@ if(loginas==='customer'){
     merchantpreviousorder.style.display = 'block';
     merchantprofile.style.display = 'block';
     logout.style.display = 'block';
+    signup.style.display = 'none';
+    login.style.display = 'none';
 
 }else if(loginas==='admin'){
     admincustomer.style.display = 'block';
     adminmerchant.style.display = 'block';
     adminprofile.style.display = 'block';
     logout.style.display = 'block';
+    signup.style.display = 'none';
+    login.style.display = 'none';
 }
 
 
