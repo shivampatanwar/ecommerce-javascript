@@ -25,7 +25,7 @@ loginbtn.addEventListener('click', (e) => {
 
     // if no customer, merchant or admin array found in local storage, show error message
     if (!customers && !merchants && !admins) {
-        alert('No customer, merchant or admin found in local storage');
+        alert('No Acoount exists');
         location.href = 'customer-signup';
     } else {
 
@@ -33,6 +33,9 @@ loginbtn.addEventListener('click', (e) => {
             //check if the customer email and password are correct
             let customer = customers.find(c => c.email === email);
             if (customer.email === email && customer.password === password) {
+
+                //
+
                 //redirect to customer dashboard
                 location.href = "customer-home";
             }else if ( customer.email !== email) {
