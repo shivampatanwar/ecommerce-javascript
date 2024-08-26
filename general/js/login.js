@@ -30,7 +30,7 @@ loginbtn.addEventListener('click', (e) => {
 
     // if no customer, merchant or admin array found in local storage, show error message
     if (!customers && !merchants && !admins) {
-        errorMsg("Acoount doesn't exists");
+        errorMsg("Acoount doesn't exists create one");
 
     } else {
 
