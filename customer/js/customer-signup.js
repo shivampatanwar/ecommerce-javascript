@@ -31,11 +31,12 @@ signupbtn.addEventListener('click', (e) => {
     //get customer array of object from local storage
     let customers = JSON.parse(localStorage.getItem('customer')) || [];
     let merchants = JSON.parse(localStorage.getItem('merchant')) || [];
+    let admins = JSON.parse(localStorage.getItem('admin')) || [];
 
 
     //check if email already exists
-    if (customers.find(c => c.email === customer.email) || merchants.find(m => m.email === customer.email)) {
-        alert('Email already exists');
+    if (customers.find(c => c.email === customer.email) || merchants.find(m => m.email === customer.email) || admins.find(a => a.email === customer.email)) {
+        document.getElementById('errormsg').innerHTML = 'Email already exists';
         return;
     }
     //if not, add customer to array and local storage
@@ -48,7 +49,7 @@ signupbtn.addEventListener('click', (e) => {
         customers.push(customer);
         localStorage.setItem('customer', JSON.stringify(customers));
 
-        document.getElementById('errormsg').innerHTML = 'Signup Successful';
+        document.getElementById('errormsg').innerHTML = 'Account created successfully';
 
         //redirect to login page
         location.href = "login";

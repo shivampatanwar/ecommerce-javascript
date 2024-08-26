@@ -50,7 +50,7 @@ signupbtn.addEventListener('click', (e) => {
         merchants.push(merchant);
         localStorage.setItem('merchant', JSON.stringify(merchants));
 
-        document.getElementById('errormsg').innerHTML = 'Signup Successful';
+        document.getElementById('errormsg').innerHTML = 'Account created successfully';
 
         //redirect to login page
         location.href = "login";
