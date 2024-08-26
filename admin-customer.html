@@ -55,17 +55,32 @@
         <style>
             .cardview{
                 display: flex;
-                justify-content: flex-start;
+                justify-content: space-evenly;
                 flex-wrap: wrap;
             }
 
             .carddiv{
-                padding: 20px;
+                padding: 40px;
+                min-width: 25%;
                 background-color: #f2f2f2;
                 border-radius: 5px;
                 box-shadow: 0 0 5px rgba(0,0,0,0.2);
-                text-align: center;
+                
+                p{
+                    margin: 10px 0;
+                }
+
+                button{
+                    padding: 10px 20px;
+                    background-color: rgb(90, 145, 8);
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    margin-top: 20px;
+                }
             }
+
         </style>
        <div class="cardview" id="cardview">
 
