@@ -8,11 +8,13 @@
 
 .active{
     font-weight: bolder;
-    font-size: 16px;
+    font-size: 17px;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    /* font-family: sans-serif; */
+    font-family: system-ui;
 }
 
 
@@ -53,7 +55,7 @@ body {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
-            font-size: 14px;
+            font-size: 15px;
         }
     }
 
