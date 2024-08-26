@@ -5,7 +5,7 @@ let merchants = JSON.parse(localStorage.getItem('merchant'));
 let cardview = document.getElementById('cardview');
 
 if (!merchants) {
-    cardview.innerHTML = 'No merchants available'
+    cardview.innerHTML = '<h2>No merchants available</h2>'
 } else {
     merchants.forEach((merchant) => {
         cardview.innerHTML += `
