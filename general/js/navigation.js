@@ -65,9 +65,9 @@ if(loginas==='customer'){
     login.style.display = 'none';
 
 }else if(loginas==='merchant'){
-    merchantproduct.style.display = 'block';
-    merchantcurrentorder.style.display = 'block';
-    merchantpreviousorder.style.display = 'block';
+    product.style.display = 'block';
+    currentorder.style.display = 'block';
+    previousorder.style.display = 'block';
     merchantprofile.style.display = 'block';
     logout.style.display = 'block';
     signup.style.display = 'none';
