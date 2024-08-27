@@ -62,8 +62,8 @@ function displayProduct(product) {
              <p>Descrition: ${product.description}</p>
              <p>Price: &#8377; ${product.price.toFixed(2)}</p>
              <p>Stock: ${product.stock}</p>
-             <button onclick="updateProduct(${product.id})">Update</button>
-             <button onclick="deleteProduct(${product.id})">Delete</button>
+             <button class="update" onclick="updateProduct(${product.id})">Update</button>
+             <button class="delete" onclick="deleteProduct(${product.id})">Delete</button>
          </div>
      `;
     }else {
@@ -181,7 +181,7 @@ updateProductForm.addEventListener('submit', function (e) {
                 name: document.getElementById('updateproductname').value,
                 description: document.getElementById('updatedescription').value,
                 price: parseFloat(document.getElementById('updateprice').value),
-                quantity: document.getElementById('updatestock').value,
+                stock: document.getElementById('updatestock').value,
                 image: imageFile ? event.target.result : merchant.product[index].image
             };
 
