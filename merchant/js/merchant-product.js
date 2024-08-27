@@ -46,24 +46,29 @@ let loginid = JSON.parse(localStorage.getItem('loginid'));
 
 let merchant = merchants.find(m => m.id == loginid);
 let productid = merchant.product.length;
-merchant.product.forEach(product=>displayProduct(product));
+merchant.product.forEach(product => displayProduct(product));
 
 
 
 
 // Display the product in the product container
 function displayProduct(product) {
-    productContainer.innerHTML += `
+
+    if (product.length !== 0) {
+        productContainer.innerHTML += `
          <div class="product">
              <img src="${product.image}" alt="${product.name}">
              <h2>${product.name}</h2>
-             <p>${product.description}</p>
-             <p>$${product.price.toFixed(2)}</p>
-             <p>$${product.quantity}</p>
+             <p>Descrition: ${product.description}</p>
+             <p>Price: &#8377; ${product.price.toFixed(2)}</p>
+             <p>Stock: ${product.stock}</p>
              <button onclick="updateProduct(${product.id})">Update</button>
              <button onclick="deleteProduct(${product.id})">Delete</button>
          </div>
      `;
+    }else {
+        productContainer.innerHTML = `<h2>No products found</h2>`;
+    }
 }
 
 
@@ -95,13 +100,13 @@ productForm.addEventListener('submit', function (e) {
             name: document.getElementById('name').value,
             description: document.getElementById('description').value,
             price: parseFloat(document.getElementById('price').value),
-            quantity: document.getElementById('quantity').value,
+            stock: document.getElementById('stock').value,
             image: event.target.result
         };
 
         // Add the new product to local storage
         merchant.product.push(product);
-        merchants.splice((loginid-1), 1, merchant);
+        merchants.splice((loginid - 1), 1, merchant);
         localStorage.setItem('merchant', JSON.stringify(merchants));
         alert(`${product.name} added successfully!`);
 
@@ -123,59 +128,78 @@ productForm.addEventListener('submit', function (e) {
 
 
 
-// Function to edit a product
+// Function to Update a product
 function updateProduct(productid) {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    const product = products.find(p => p.id === productid);
+
+    let merchants = JSON.parse(localStorage.getItem('merchant'));
+    let loginid = JSON.parse(localStorage.getItem('loginid'));
+
+    let merchant = merchants.find(m => m.id == loginid);
+
+    let product = merchant.product.find(p => p.id == productid);
+
     if (product) {
         document.getElementById('updateproductid').value = product.id;
         document.getElementById('updateproductname').value = product.name;
         document.getElementById('updatedescription').value = product.description;
         document.getElementById('updateprice').value = product.price;
-        document.getElementById('updateprice').value = product.price;
-        document.getElementById('updateImage').value = '';
+        document.getElementById('updatestock').value = product.quantity;
+        document.getElementById('updateimage').value = '';
         document.getElementById('imgdiv').innerHTML = `<img src="${product.image}" alt="${product.name}">`;
 
         updateFormDiv.style.display = 'block';
         formDiv.style.display = 'none';
         addProductBtn.style.display = 'none';
         productContainer.style.display = 'none';
-        document.body.classList.add('update-form-open');
     }
 }
 
 
 
 // Event listener for submitting the update product form
-document.getElementById('updateProductForm').addEventListener('submit', function (e) {
+let updateProductForm = document.getElementById('updateProductForm');
+updateProductForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    const productId = parseInt(document.getElementById('updateProductId').value);
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    const index = products.findIndex(p => p.id === productId);
+
+    const productid = parseInt(document.getElementById('updateproductid').value);
+    let merchants = JSON.parse(localStorage.getItem('merchant'));
+    let loginid = JSON.parse(localStorage.getItem('loginid'));
+
+    let merchant = merchants.find(m => m.id == loginid);
+    let product = merchant.product.find(p => p.id == productid);
+    let index = merchant.product.indexOf(product);
+
 
     if (index !== -1) {
-        const imageFile = document.getElementById('updateImage').files[0];
+        const imageFile = document.getElementById('updateimage').files[0];
         const reader = new FileReader();
 
         reader.onload = function (event) {
             // Update the product in the array
-            products[index] = {
-                id: productId,
-                name: document.getElementById('updateProductName').value,
-                description: document.getElementById('updateDescription').value,
-                price: parseFloat(document.getElementById('updatePrice').value),
-                image: imageFile ? event.target.result : products[index].image
+            merchant.product[index] = {
+                id: productid,
+                name: document.getElementById('updateproductname').value,
+                description: document.getElementById('updatedescription').value,
+                price: parseFloat(document.getElementById('updateprice').value),
+                quantity: document.getElementById('updatestock').value,
+                image: imageFile ? event.target.result : merchant.product[index].image
             };
 
+
             // Save updated products to local storage
-            localStorage.setItem('products', JSON.stringify(products));
-            alert(`${products[index].name} updated successfully!`);
+            merchants.splice((loginid - 1), 1, merchant);
+            localStorage.setItem('merchant', JSON.stringify(merchants));
+
+            // print out the updated products
+            alert(`${merchant.product[index].name} updated successfully!`);
+
+
             updateFormDiv.style.display = 'none';
             addProductBtn.style.display = 'block';
             productContainer.innerHTML = '';
-            products.forEach(displayProduct);
+
+            merchant.product.forEach(displayProduct);
             productContainer.style.display = 'flex';
-            document.body.classList.remove('update-form-open');
         };
 
         if (imageFile) {
@@ -187,15 +211,21 @@ document.getElementById('updateProductForm').addEventListener('submit', function
 });
 
 // Function to delete a product
-function deleteProduct(productId) {
-    const products = JSON.parse(localStorage.getItem('products')) || [];
-    const index = products.findIndex(p => p.id === productId);
+function deleteProduct(productid) {
+
+    let merchants = JSON.parse(localStorage.getItem('merchant'));
+    let loginid = JSON.parse(localStorage.getItem('loginid'));
+
+    let merchant = merchants.find(m => m.id == loginid);
+    let product = merchant.product.find(p => p.id == productid);
+    let index = merchant.product.indexOf(product);
+
     if (index !== -1) {
-        let product = products[index];
-        products.splice(index, 1);
-        localStorage.setItem('products', JSON.stringify(products));
+        let p = merchant.product[index];
+        merchant.product.splice(index, 1);
+        localStorage.setItem('merchant', JSON.stringify(merchants));
         document.getElementById('productContainer').innerHTML = '';
-        products.forEach(displayProduct);
-        alert(`${product.name} deleted successfully!`);
+        merchant.product.forEach(displayProduct);
+        alert(`${p.name} deleted successfully!`);
     }
 }
