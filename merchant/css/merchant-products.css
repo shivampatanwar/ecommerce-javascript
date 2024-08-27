@@ -3,7 +3,7 @@
 /* Add product button styles */
 .addproductbutton {
     align-self: flex-start;
-    margin: 100px 50px  50px;
+    margin: 100px 50px  20px;
     background-color: #055008;
     color: white;
     padding: 10px 20px;
@@ -154,13 +154,15 @@
     .productContainer {
         flex-wrap: wrap;
         margin-left: 16px;
+
     }
     .product{
-        min-width: 250px;
+        min-width: 220px;
         height: auto;
     }
     .addproductbutton {
-        margin-left: 16px;
+        margin-left: 25px;
+        margin-bottom: 20px;
     }
 
     
