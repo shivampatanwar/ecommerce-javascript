@@ -92,18 +92,19 @@
 /* Hide and show form divs */
 #updateFormDiv {
     display: none;
+
 }
 
 #updateProductForm {
-    width: 90%;
+    width: 40%;
 }
 
 #imgdiv img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 4px;
-    margin: 20px;
     object-fit: cover;
+    padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 }
@@ -128,6 +129,10 @@
     .product{
         width: 90%;
         min-height: 530px;
+    }
+
+    #updateProductForm {
+        width: 90%;
     }
 
 
@@ -163,6 +168,10 @@
     .addproductbutton {
         margin-left: 25px;
         margin-bottom: 20px;
+    }
+
+    #updateProductForm {
+        width: 500px;
     }
 
     
