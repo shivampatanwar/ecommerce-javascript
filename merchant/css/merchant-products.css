@@ -152,12 +152,11 @@
 
 @media screen and (480px<=width<=1000px){
     .productContainer {
-        align-items: flex-start;
         flex-wrap: wrap;
         margin-left: 16px;
     }
     .product{
-        min-width: 45%;
+        min-width: 250px;
         height: auto;
     }
     .addproductbutton {
