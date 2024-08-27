@@ -1,9 +1,11 @@
 // display the merchant profile
 let merchants = JSON.parse(localStorage.getItem('merchant'));
 
-let loginid = localStorage.getItem('loginid');
+let loginid = JSON.parse(localStorage.getItem('loginid'));
 
 let merchant = merchants.find(m => m.id === loginid);
+
+console.log(merchant);
 
 let profileview = document.getElementById('profileview');
 
