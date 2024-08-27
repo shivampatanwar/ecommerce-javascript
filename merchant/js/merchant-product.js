@@ -10,12 +10,15 @@ const updateBackBtn = document.getElementById('updateBackBtn');
 formDiv.style.display = 'none';
 updateFormDiv.style.display = 'none';
 
+
+
+
+
 // Event listener for Add Product button
 addProductBtn.addEventListener('click', function () {
     formDiv.style.display = 'block';
     addProductBtn.style.display = 'none';
     productContainer.style.display = 'none';
-    document.body.classList.add('form-open');
 
 });
 
@@ -24,44 +27,90 @@ backBtn.addEventListener('click', function () {
     formDiv.style.display = 'none';
     addProductBtn.style.display = 'block';
     productContainer.style.display = 'flex';
-    document.body.classList.remove('form-open');
 });
 
+// Event listener for Back button in the update form
+updateBackBtn.addEventListener('click', function () {
+    updateFormDiv.style.display = 'none';
+    addProductBtn.style.display = 'block';
+    productContainer.style.display = 'flex';
+});
+
+
+
+
+
+// Load and display existing products
+let merchants = JSON.parse(localStorage.getItem('merchant'));
+let loginid = JSON.parse(localStorage.getItem('loginid'));
+
+let merchant = merchants.find(m => m.id == loginid);
+let productid = merchant.product.length;
+merchant.product.forEach(product=>displayProduct(product));
+
+
+
+
+// Display the product in the product container
+function displayProduct(product) {
+    productContainer.innerHTML += `
+         <div class="product">
+             <img src="${product.image}" alt="${product.name}">
+             <h2>${product.name}</h2>
+             <p>${product.description}</p>
+             <p>$${product.price.toFixed(2)}</p>
+             <p>$${product.quantity}</p>
+             <button onclick="updateProduct(${product.id})">Update</button>
+             <button onclick="deleteProduct(${product.id})">Delete</button>
+         </div>
+     `;
+}
+
+
+
+
+
+
+
+
 // Event listener for submitting the add product form
-document.getElementById('productForm').addEventListener('submit', function (e) {
+let productForm = document.getElementById('productForm');
+productForm.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const imageFile = document.getElementById('image').files[0];
     const reader = new FileReader();
 
-    const idarray = JSON.parse(localStorage.getItem('idarray')) || [];
-    idarray.push(1);
-    localStorage.setItem('idarray', JSON.stringify(idarray));
+    // Generate unique id for the product
+    let merchants = JSON.parse(localStorage.getItem('merchant'));
+    let loginid = JSON.parse(localStorage.getItem('loginid'));
 
-
+    let merchant = merchants.find(m => m.id == loginid);
+    let productid = merchant.product.length;
 
     reader.onload = function (event) {
         // Create a new product object
         const product = {
-            id: idarray.length,
-            name: document.getElementById('productName').value,
+            id: productid + 1,
+            name: document.getElementById('name').value,
             description: document.getElementById('description').value,
             price: parseFloat(document.getElementById('price').value),
+            quantity: document.getElementById('quantity').value,
             image: event.target.result
         };
 
         // Add the new product to local storage
-        let products = JSON.parse(localStorage.getItem('products')) || [];
-        products.push(product);
-        localStorage.setItem('products', JSON.stringify(products));
-
+        merchant.product.push(product);
+        merchants.splice((loginid-1), 1, merchant);
+        localStorage.setItem('merchant', JSON.stringify(merchants));
         alert(`${product.name} added successfully!`);
+
         displayProduct(product);
+
         document.getElementById('productForm').reset();
         formDiv.style.display = 'none';
         addProductBtn.style.display = 'block';
         productContainer.style.display = 'flex';
-        document.body.classList.remove('form-open');
     };
 
     if (imageFile) {
@@ -69,34 +118,21 @@ document.getElementById('productForm').addEventListener('submit', function (e) {
     }
 });
 
-// Load and display existing products
-const products = JSON.parse(localStorage.getItem('products')) || [];
-products.forEach(displayProduct);
 
-// Function to display a single product
-function displayProduct(product) {
-    const productElement = document.createElement('div');
-    productElement.className = 'product';
-    productElement.innerHTML = `
-         <img src="${product.image}" alt="${product.name}">
-         <h2>${product.name}</h2>
-         <p>${product.description}</p>
-         <p>Price: ₹ ${product.price.toFixed(2)}</p>
-         <button class="edit" onclick="editProduct(${product.id})">Edit</button>
-         <button class="delete" onclick="deleteProduct(${product.id})">Delete</button>
-     `;
-    document.getElementById('productContainer').appendChild(productElement);
-}
+
+
+
 
 // Function to edit a product
-function editProduct(productId) {
+function updateProduct(productid) {
     const products = JSON.parse(localStorage.getItem('products')) || [];
-    const product = products.find(p => p.id === productId);
+    const product = products.find(p => p.id === productid);
     if (product) {
-        document.getElementById('updateProductId').value = product.id;
-        document.getElementById('updateProductName').value = product.name;
-        document.getElementById('updateDescription').value = product.description;
-        document.getElementById('updatePrice').value = product.price;
+        document.getElementById('updateproductid').value = product.id;
+        document.getElementById('updateproductname').value = product.name;
+        document.getElementById('updatedescription').value = product.description;
+        document.getElementById('updateprice').value = product.price;
+        document.getElementById('updateprice').value = product.price;
         document.getElementById('updateImage').value = '';
         document.getElementById('imgdiv').innerHTML = `<img src="${product.image}" alt="${product.name}">`;
 
@@ -108,13 +144,7 @@ function editProduct(productId) {
     }
 }
 
-// Event listener for Back button in the update form
-updateBackBtn.addEventListener('click', function () {
-    updateFormDiv.style.display = 'none';
-    addProductBtn.style.display = 'block';
-    productContainer.style.display = 'flex';
-    document.body.classList.remove('update-form-open');
-});
+
 
 // Event listener for submitting the update product form
 document.getElementById('updateProductForm').addEventListener('submit', function (e) {
