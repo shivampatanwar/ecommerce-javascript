@@ -7,6 +7,7 @@
     <title>Merchant Products</title>
     <link rel="stylesheet" href="general/css/headerfooter.css">
     <link rel="stylesheet" href="general/css/form.css">
+    <link rel="stylesheet" href="merchant/css/merchant-products.css">
 </head>
 
 <body>
@@ -73,8 +74,8 @@
                 </div>
 
                 <div class="forms">
-                    <label for="price">Price:</label>
-                    <input type="number" id="price" name="price" step="0.01" min="0" required>
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" step="0.01" min="0" required>
                 </div>
 
                 <div class="forms">
@@ -84,7 +85,6 @@
 
                 <div class="btns">
                     <button type="submit" class="btn" id="addproduct">Sign Up</button>
-                    <button type="reset" class="btn">Reset</button>
                     <button type="button" id="backBtn" class="btn">Reset</button>
                 </div>
 
@@ -93,37 +93,42 @@
         </div>
 
 
-        
+
 
         <!-- Form for updating an existing product -->
         <div id="updateFormDiv" class="formdiv">
 
-            <form id="updateProductForm"  class="form">
+            <form id="updateProductForm" class="form">
 
-                
+                <h2>Update Product</h2>
+
                 <input type="hidden" id="updateProductId" name="updateProductId">
 
                 <div class="forms">
-                <label for="updateProductName">Product Names:</label>
-                <input type="text" id="updateProductName" name="updateProductName" required>
-
-                <div class="forms"> 
-                <label for="updateDescription">Description:</label>
-                <textarea id="updateDescription" name="updateDescription" required></textarea>
+                    <label for="updateProductName">Product Names:</label>
+                    <input type="text" id="updateProductName" name="updateProductName" required>
+                </div>
 
                 <div class="forms">
-                <label for="updatePrice">Price:</label>
-                <input type="number" id="updatePrice" name="updatePrice" step="0.01" min="0" required>
+                    <label for="updateDescription">Description:</label>
+                    <textarea id="updateDescription" name="updateDescription" required></textarea>
+                </div>
 
                 <div class="forms">
-                <label for="updateImage">Image:</label>
-                <input type="file" id="updateImage" name="updateImage" accept="image/*">
+                    <label for="updatePrice">Price:</label>
+                    <input type="number" id="updatePrice" name="updatePrice" step="0.01" min="0" required>
+                </div>
 
-                <div id="imgdiv"></div>
+                <div class="forms">
+                    <label for="updateImage">Image:</label>
+                    <input type="file" id="updateImage" name="updateImage" accept="image/*">
+                </div>
+
+                <div id="imgdiv" class="forms"></div>
 
                 <div class="btns">
-                    <button type="submit">Update</button>
-                    <button type="button" id="updateBackBtn">Back</button>
+                    <button type="submit" class="btn">Update</button>
+                    <button type="button" id="updateBackBtn" class="btn">Back</button>
                 </div>
             </form>
         </div>
@@ -163,6 +168,7 @@
     </footer>
     <script src="general/js/hamberger.js"></script>
     <script src="general/js/navigation.js"></script>
+    <script src="merchant/js/merchant-product.js"></script>
 </body>
 
 </html>
