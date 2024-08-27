@@ -78,7 +78,7 @@ body {
 }
 
 /* Responsive Header  */
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 780px) {
 
     .container {
         padding: 30px 20px;

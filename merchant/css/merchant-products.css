@@ -109,7 +109,7 @@
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
 
 
     .addproductbutton {
@@ -128,7 +128,6 @@
     .product{
         width: 90%;
         min-height: 530px;
-        margin-left: 0px;
     }
 
 
@@ -151,10 +150,9 @@
     
 }
 
-@media screen and (450px<=width<=1000px){
+@media screen and (480px<=width<=1000px){
     .productContainer {
         align-items: flex-start;
-        width: 100%;
         flex-wrap: wrap;
         margin-left: 16px;
     }
