@@ -5,7 +5,7 @@ let loginid = JSON.parse(localStorage.getItem('loginid'));
 
 let merchant = merchants.find(m => m.id === loginid);
 
-console.log(merchant);
+//console.log(merchant);
 
 let profileview = document.getElementById('profileview');
 
