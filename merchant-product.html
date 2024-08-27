@@ -49,89 +49,95 @@
     </header>
 
     <main>
+
         <!-- Button to add a new product -->
-        <button id="addProductBtn" class="add-product-button">Add Product</button>
+        <button id="addProductBtn" type="button" class="addproductbutton">Add Product</button>
 
-        <!-- Form for adding a new product -->
-        <div id="formDiv" class="formdiv">
-            <form id="productForm" class="form">
+        <div class="productcontainer">
+            <!-- Form for adding a new product -->
+            <div id="formDiv" class="formdiv">
+                <form id="productForm" class="form">
 
-                <h2>Add Product</h2>
+                    <h2>Add Product</h2>
 
-                <div class="forms">
-                    <label for="name">Product Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+                    <div class="forms">
+                        <label for="name">Product Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
 
-                <div class="forms">
-                    <label for="description">Description:</label>
-                    <textarea id="description" name="description" required></textarea>
-                </div>
+                    <div class="forms">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required></textarea>
+                    </div>
 
-                <div class="forms">
-                    <label for="price">Price:</label>
-                    <input type="number" id="price" name="price" step="0.01" min="0" required>
-                </div>
+                    <div class="forms">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price" step="0.01" min="0" required>
+                    </div>
 
-                <div class="forms">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" id="quantity" name="quantity" step="0.01" min="0" required>
-                </div>
+                    <div class="forms">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" step="0.01" min="0" required>
+                    </div>
 
-                <div class="forms">
-                    <label for="image">Image:</label>
-                    <input type="file" id="image" name="image" accept="image/*" required>
-                </div>
+                    <div class="forms">
+                        <label for="image">Image:</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                    </div>
 
-                <div class="btns">
-                    <button type="submit" class="btn" id="addproduct">Sign Up</button>
-                    <button type="button" id="backBtn" class="btn">Reset</button>
-                </div>
+                    <div class="btns">
+                        <button type="submit" class="btn" id="addproduct">Add Product</button>
+                        <button type="button" id="backBtn" class="btn">Back</button>
+                    </div>
 
-            </form>
+                </form>
 
+            </div>
+
+
+            <!-- Form for updating an existing product -->
+            <div id="updateFormDiv" class="formdiv">
+
+                <form id="updateProductForm" class="form">
+
+                    <h2>Update Product</h2>
+
+                    <input type="hidden" id="updateProductId" name="updateProductId">
+
+                    <div class="forms">
+                        <label for="updateProductName">Product Names:</label>
+                        <input type="text" id="updateProductName" name="updateProductName" required>
+                    </div>
+
+                    <div class="forms">
+                        <label for="updateDescription">Description:</label>
+                        <textarea id="updateDescription" name="updateDescription" required></textarea>
+                    </div>
+
+                    <div class="forms">
+                        <label for="updatePrice">Price:</label>
+                        <input type="number" id="updatePrice" name="updatePrice" step="0.01" min="0" required>
+                    </div>
+
+                    <div class="forms">
+                        <label for="updateImage">Image:</label>
+                        <input type="file" id="updateImage" name="updateImage" accept="image/*">
+                    </div>
+
+                    <div id="imgdiv" class="forms"></div>
+
+                    <div class="btns">
+                        <button type="submit" class="btn">Update</button>
+                        <button type="button" id="updateBackBtn" class="btn">Back</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
 
 
 
-        <!-- Form for updating an existing product -->
-        <div id="updateFormDiv" class="formdiv">
 
-            <form id="updateProductForm" class="form">
-
-                <h2>Update Product</h2>
-
-                <input type="hidden" id="updateProductId" name="updateProductId">
-
-                <div class="forms">
-                    <label for="updateProductName">Product Names:</label>
-                    <input type="text" id="updateProductName" name="updateProductName" required>
-                </div>
-
-                <div class="forms">
-                    <label for="updateDescription">Description:</label>
-                    <textarea id="updateDescription" name="updateDescription" required></textarea>
-                </div>
-
-                <div class="forms">
-                    <label for="updatePrice">Price:</label>
-                    <input type="number" id="updatePrice" name="updatePrice" step="0.01" min="0" required>
-                </div>
-
-                <div class="forms">
-                    <label for="updateImage">Image:</label>
-                    <input type="file" id="updateImage" name="updateImage" accept="image/*">
-                </div>
-
-                <div id="imgdiv" class="forms"></div>
-
-                <div class="btns">
-                    <button type="submit" class="btn">Update</button>
-                    <button type="button" id="updateBackBtn" class="btn">Back</button>
-                </div>
-            </form>
-        </div>
 
         <!-- Container for displaying products -->
         <div id="productContainer" class="product-container">
