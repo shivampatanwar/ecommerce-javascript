@@ -47,28 +47,31 @@
     </header>
 
     <main>
+        <style>
+            .profileview {
+                margin: 100px 10px;
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h1 align="center">Profile</h1>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+            }
+
+            p{
+                margin: 10px 0;
+            }
+
+            @media screen and (max-width: 527px) {
+                .profileview {
+                    margin: 100px 20px;
+                    padding: 20px 20px;
+                    background-color: white;
+                    border-radius: 5px;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+                }
+
+            }
+        </style>
+        <div class="profileview" id="profileview"></div>
+
+
     </main>
 
     <footer>
