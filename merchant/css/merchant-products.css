@@ -112,6 +112,12 @@ body.update-form-open #updateFormDiv {
 
 
 @media screen and (max-width: 450px) {
+
+
+    .addproductbutton {
+        margin: 80px 20px  50px;
+    }
+
     .product-container {
         flex-direction: column;
         align-items: center;
