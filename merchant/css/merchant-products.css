@@ -33,12 +33,14 @@
 .productContainer{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0px 40px  50px;
 
 }
 
 .product {
-    width: 250px;
+    min-width: 280px;
     min-height: 400px;
     margin: 10px;
     padding: 20px;
@@ -111,19 +113,22 @@
 
 
     .addproductbutton {
-        margin: 80px 20px  50px;
+        margin: 80px 20px  20px;
     }
 
     .productContainer {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         width: 100%;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        margin: 0px;
         margin-bottom: 30px;
     }
     .product{
         width: 90%;
         min-height: 530px;
+        margin-left: 0px;
     }
 
 
@@ -151,9 +156,10 @@
         align-items: flex-start;
         width: 100%;
         flex-wrap: wrap;
+        margin-left: 16px;
     }
     .product{
-        width: 26%;
+        min-width: 45%;
         height: auto;
     }
     .addproductbutton {
