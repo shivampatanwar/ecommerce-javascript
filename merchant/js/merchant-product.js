@@ -143,7 +143,7 @@ function updateProduct(productid) {
         document.getElementById('updateproductname').value = product.name;
         document.getElementById('updatedescription').value = product.description;
         document.getElementById('updateprice').value = product.price;
-        document.getElementById('updatestock').value = product.quantity;
+        document.getElementById('updatestock').value = product.stock;
         document.getElementById('updateimage').value = '';
         document.getElementById('imgdiv').innerHTML = `<img src="${product.image}" alt="${product.name}">`;
 
