@@ -1,7 +1,7 @@
 // display the merchant profile
 let merchants = JSON.parse(localStorage.getItem('merchant'));
 
-let loginid = JSON.parse(localStorage.getItem('loginid'));
+let loginid = localStorage.getItem('loginid');
 
 let merchant = merchants.find(m => m.id === loginid);
 
