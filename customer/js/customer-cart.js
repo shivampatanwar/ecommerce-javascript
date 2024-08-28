@@ -25,20 +25,32 @@ function displayProduct(element) {
     if (cart.length !== 0) {
         cartview.innerHTML += `
             <div class="cartdiv">
-                <img src="${element.image}" alt="${element.name}">
-                <h2>${element.name}</h2>
-                <p>Descrition: ${element.description}</p>
-                <p>Price: &#8377; ${element.price.toFixed(2)}</p>
-                <p>Total Price: &#8377; ${element.totalprice.toFixed(2)}</p>
-                
-                <div class="quantity">
-                    <button class="increase" onclick="increase(${element.id})">-</button>
-                    <p>${element.quantity}</p>
-                    <button class="decrease" onclick="decrease(${element.id})">+</button>
+                <div class="left">
+                    <img class="cddiv" src="${element.image}" alt="${element.name}">
+                    <div  class="desc">
+                        <h2>${element.name}</h2>
+                        <p class="descrition">Descrition: ${element.description}</p>
+                    
+                    </div>
+                     
+                </div>
+               
+                <div class="right">
+                    <p class="price">Price: &#8377; ${element.price.toFixed(2)}</p>
+                    <p class="total">Total Price: &#8377; ${element.totalprice.toFixed(2)}</p>
+                   <div class="idbtn">
+                        <button class="increase" onclick="increase(${element.id})">-</button>
+                        <p>${element.quantity}</p>
+                        <button class="decrease" onclick="decrease(${element.id})">+</button>
+                   </div>
+
+                    <button class="remove cddiv" onclick="removeFromCart(${element.id})">Delete</button>
                     
                 </div>
 
-                <button class="remove" onclick="removeFromCart(${element.id})">Remove</button>
+                
+
+                
 
                 
             </div>`;

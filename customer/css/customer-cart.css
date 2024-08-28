@@ -14,26 +14,57 @@
     padding: 20px 20px;
 
 
-    img{
-        width: 80px;
-        height: 80px;
-        margin-left: 10px;
-    }
-
-    .remove{
-        font-size: 15px;
-        border: none;
-        padding: 5px 10px;
-        background-color: red;
-        border-radius: 5px;
-        color: white;
-    }
-
-    .quantity{
+    .left{
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        width: 100px;
+        width: 40%;
+
+        img{
+            width: 80px;
+            height: 80px;
+        }
+
+        .price{
+            margin-left: auto;
+        }
+
+        .desc{
+            margin-left: 20px;
+            align-self: flex-start;
+
+            h2{
+                font-size: 20px;
+            }
+
+            .descrition{
+                width: 100%;
+                font-size: 13px;
+            }
+        }
+
+
+    }
+
+
+    
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 40%;
+
+        .total{
+            margin-right: 10%;
+        }
+
+        .idbtn{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           width: 100px;
+        }
+
 
         button{
             font-size: 1.5rem;
@@ -42,6 +73,16 @@
             border: none;
             background-color: transparent;
             margin: 10px;
+        }
+
+        .remove{
+            margin-left: 50px;
+            font-size: 15px;
+            border: none;
+            padding: 5px 10px;
+            background-color: red;
+            border-radius: 5px;
+            color: white;
         }
 
         
