@@ -36,50 +36,58 @@ function displayProduct(merchant) {
 
 function addtocart(productid, merchantid) {
     let loginas = localStorage.getItem('loginas');
-    let loginid = localStorage.getItem('loginid');
+    let loginid = parseInt(localStorage.getItem('loginid'));
+
 
     if (loginas==='customer') {
+
         let merchants = JSON.parse(localStorage.getItem('merchant'));
         let merchant = merchants.find((m) => m.id === merchantid);
 
-        console.log(merchants)
-        console.log(merchant)
-
         let customers = JSON.parse(localStorage.getItem('customer'));
-        let customer = customers.find((customer) => customer.id === loginid);
+
+        let customer = customers.find((c) => c.id === loginid);
+        let index = customers.findIndex((c) => c.id === loginid);
 
         let product = merchant.product.find((p) => p.id === parseInt(productid));
 
-        let customercart = customer.cart.find((c) => c.id === product.id);
+        let carts = customer.cart.find((c) => c.id === product.id);
+        let cartindex = customer.cart.findIndex((c) => c.id === product.id);
 
-        if (customercart) {
-            customercart.quantity += 1;
-            customercart.totalprice += product.price;
-
-
+        if (carts) {
+            carts.quantity += 1;
+            carts.totalprice += product.price;
+            customer.cart.splice(cartindex, 1, carts);
+            customers.splice(index, 1, customer);
+            localStorage.setItem('customer', JSON.stringify(customers));
+            alert('Product added to cart');
         } else {
 
-            let cart = {
+            let customercart = {
                 id: product.id,
                 name: product.name,
                 description: product.description,
                 price: product.price,
-                quantity: 1,
-                totalprice: product.price * quantity,
+                totalprice: product.price,
+                quantity : 1,
                 image: product.image
             }
-
-            console.log(cart)
-
-            customer.cart.push(cart);
+            customer.cart.push(customercart);
+            customers.splice(index, 1, customer);
+            localStorage.setItem('customer', JSON.stringify(customers));
+            alert('Product added to cart');
         }
 
+
+
+
     }else{
+        alert('Please login as customer to add product to cart');
         location.href=  "login";
     }
 
 
-    alert('Product added to cart');
+    
 }
 
 function buynow(productid, merchantid) {
