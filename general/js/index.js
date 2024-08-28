@@ -24,8 +24,8 @@ function displayProduct(merchant) {
                 <p>Descrition: ${product.description}</p>
                 <p>Price: &#8377; ${product.price.toFixed(2)}</p>
                 <p>Merchant: ${merchant.name}</p>
-                <button class="addtocart" onclick="addtocart(${product.id}, ${ merchant.id})">Add to Cart</button>
-                <button class="buynow" onclick="buynow(${product.id}, ${ merchant.id})">Buy Now</button>
+                <button class="addtocart" onclick="addtocart(${product.id}, ${merchant.id})">Add to Cart</button>
+                <button class="buynow" onclick="buynow(${product.id}, ${merchant.id})">Buy Now</button>
             </div>`;
         } else {
             productContainer.innerHTML = `<h2>No products found</h2>`;
@@ -38,42 +38,46 @@ function addtocart(productid, merchantid) {
     let loginas = localStorage.getItem('loginas');
     let loginid = localStorage.getItem('loginid');
 
-    let merchants = JSON.parse(localStorage.getItem('merchant'));
-    let merchant = merchants.find((m) => m.id === merchantid);
+    if (loginas==='customer') {
+        let merchants = JSON.parse(localStorage.getItem('merchant'));
+        let merchant = merchants.find((m) => m.id === merchantid);
 
-    console.log(merchants)
-    console.log(merchant)
+        console.log(merchants)
+        console.log(merchant)
 
-    let customers = JSON.parse(localStorage.getItem('customer'));
-    let customer = customers.find((customer) => customer.id === loginid);
+        let customers = JSON.parse(localStorage.getItem('customer'));
+        let customer = customers.find((customer) => customer.id === loginid);
 
-    let product = merchant.product.find((p) => p.id === parseInt(productid));
+        let product = merchant.product.find((p) => p.id === parseInt(productid));
 
-    let customercart = customer.cart.find((c) => c.id === product.id);
+        let customercart = customer.cart.find((c) => c.id === product.id);
 
-    if(customercart) {
-        customercart.quantity += 1;
-        customercart.totalprice += product.price;
+        if (customercart) {
+            customercart.quantity += 1;
+            customercart.totalprice += product.price;
 
 
-    } else {
+        } else {
 
-        let cart = {
-            id: product.id,
-            name:  product.name,
-            description:  product.description,
-            price: product.price,
-            quantity: 1,
-            totalprice: product.price * quantity,
-            image: product.image
+            let cart = {
+                id: product.id,
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                quantity: 1,
+                totalprice: product.price * quantity,
+                image: product.image
+            }
+
+            console.log(cart)
+
+            customer.cart.push(cart);
         }
-    
-        console.log(cart)
-        
-        customer.cart.push(cart);
+
+    }else{
+        location.href=  "login";
     }
 
-   
 
     alert('Product added to cart');
 }
