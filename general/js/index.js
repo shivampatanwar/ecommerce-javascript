@@ -83,6 +83,8 @@ function addtocart(productid, merchantid) {
 
     }else{
         alert('Please login as customer to add product to cart');
+        localStorage.removeItem('loginas');
+        localStorage.removeItem('loginid');
         location.href=  "login";
     }
 
