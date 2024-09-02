@@ -3,7 +3,7 @@
 /* Add product button styles */
 .addproductbutton {
     align-self: flex-start;
-    margin: 100px 50px  20px;
+    margin: 100px 42px  20px;
     background-color: #055008;
     color: white;
     padding: 10px 20px;
@@ -24,10 +24,6 @@
 }
 
 
-
-
-
-
 /* Individual product styles */
 
 .productContainer{
@@ -39,10 +35,10 @@
 }
 
 .product {
-    width: 21%;
+    width: 23%;
     height: 490px;
     padding: 20px;
-    margin: 20px 20px 10px  20px;
+    margin: 20px 10px 10px  10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -136,7 +132,7 @@
 
 
     .addproductbutton {
-        margin: 80px 20px  20px;
+        margin: 80px 30px  10px;
     }
 
     #updateProductForm {
