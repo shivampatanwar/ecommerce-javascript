@@ -22,8 +22,8 @@
 }
 
 .product {
-    min-width: 280px;
-    min-height: 350px;
+    width: 280px;
+    height: 400px;
     margin: 10px;
     padding: 20px;
     border: 1px solid #ddd;
@@ -38,6 +38,13 @@
     object-fit: cover;
 }
 
+
+.product .description {
+    width: 100%;
+    height: 50px;
+    overflow 
+}
+
 .product h2 {
     margin-top: 15px;
     font-size: 1.3em;
@@ -46,6 +53,7 @@
 .product p {
     margin: 5px 0 5px;
     font-size: 1em;
+    width: 100%;
 }
 
 

@@ -21,7 +21,7 @@ function displayProduct(merchant) {
             <div class="product">
                 <img src="${product.image}" alt="${product.name}">
                 <h2>${product.name}</h2>
-                <p>Descrition: ${product.description}</p>
+                <p class="description">Descrition: ${product.description}</p>
                 <p>Price: &#8377; ${product.price.toFixed(2)}</p>
                 <p>Merchant: ${merchant.name}</p>
                 <button class="addtocart" onclick="addtocart(${product.id}, ${merchant.id})">Add to Cart</button>
