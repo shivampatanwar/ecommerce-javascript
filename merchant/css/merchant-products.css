@@ -160,10 +160,8 @@
         margin-bottom: 20px;
     }
 
-    .formdiv {
-       .form{
+    #updateProductForm {
         width: 80%;
-       }
     }
     
 }
