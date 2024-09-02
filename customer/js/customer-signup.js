@@ -10,7 +10,8 @@ signupbtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     // generate customer id
-    let customerid = JSON.parse(localStorage.getItem('customerid')) || 1;
+    let customerss = JSON.parse(localStorage.getItem('customer')) || [];
+    let customerid = customerss.length+1;
 
 
 
@@ -41,9 +42,6 @@ signupbtn.addEventListener('click', (e) => {
     }
     //if not, add customer to array and local storage
     else {
-
-        //add latest/newest customerid to local storage
-        localStorage.setItem('customerid', JSON.stringify(customerid + 1));
 
         //add customer to local storage
         customers.push(customer);
