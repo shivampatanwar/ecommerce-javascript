@@ -110,22 +110,23 @@ main{
 }
 
 
-@media screen and (580px<=width<=750px){
+@media screen and (580px<=width<=774px){
     .productContainer {
-        flex-wrap: wrap;
+        margin: 80px -5px 50px 20px;
 
     }
     .product{
         width: 46%;
+        margin: 10px 10px 10px 10px;
     }
 
 
     
 }
 
-@media screen and (750px<=width<=1100px){
+@media screen and (774px<=width<=1100px){
     .productContainer {
-        margin: 80px 0px 50px 20px;
+        margin: 80px -5px 50px 20px;
 
     }
     .product{
