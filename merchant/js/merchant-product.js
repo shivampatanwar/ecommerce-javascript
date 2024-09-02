@@ -59,7 +59,7 @@ function displayProduct(product) {
          <div class="product">
              <img src="${product.image}" alt="${product.name}">
              <h2>${product.name}</h2>
-             <p>Descrition: ${product.description}</p>
+             <p class="description">Description: ${product.description}</p>
              <p>Price: &#8377; ${product.price.toFixed(2)}</p>
              <p>Stock: ${product.stock}</p>
              <button class="update" onclick="updateProduct(${product.id})">Update</button>
