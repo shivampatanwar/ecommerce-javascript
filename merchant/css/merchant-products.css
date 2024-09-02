@@ -108,9 +108,9 @@
 
 #imgdiv img {
     width: 150px;
-    height: 150px;
+    height: 200px;
     border-radius: 4px;
-    object-fit: cover;
+    object-fit: inherit;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
